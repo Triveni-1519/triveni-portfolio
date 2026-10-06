@@ -1,0 +1,977 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thota Triveni | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 16, 32, 0.95);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #252c45;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00d9ff;
+        }
+
+        /* HERO */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 120px 10% 60px;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .hero-text h4 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 span {
+            color: #00d9ff;
+        }
+
+        .hero-text h2 {
+            color: #b9c1d9;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: #b9c1d9;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 13px 25px;
+            margin-right: 10px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #00d9ff;
+            color: #08101d;
+        }
+
+        .btn-secondary {
+            border: 1px solid #00d9ff;
+            color: #00d9ff;
+        }
+
+        .profile-box {
+            width: 330px;
+            padding: 40px;
+            background: #151c34;
+            border: 1px solid #2c3655;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .profile-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: auto;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #7c5cff, #00d9ff);
+        }
+
+        .profile-box p {
+            color: #b9c1d9;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 10%;
+        }
+
+        section:nth-child(even) {
+            background: #11182d;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #00d9ff;
+            letter-spacing: 2px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            background: #151c34;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #2c3655;
+        }
+
+        .about p {
+            color: #c3c9db;
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            background: #151c34;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #2c3655;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #00d9ff;
+        }
+
+        .skill h3 {
+            color: #00d9ff;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            color: #b9c1d9;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: #151c34;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #00d9ff;
+            border-radius: 10px;
+        }
+
+        .education-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .education-card span {
+            color: #00d9ff;
+            font-size: 14px;
+        }
+
+        .education-card p {
+            color: #b9c1d9;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project {
+            background: #151c34;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #2c3655;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: #00d9ff;
+        }
+
+        .project h3 {
+            color: #00d9ff;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .project h4 {
+            color: #b9c1d9;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #c3c9db;
+            margin-bottom: 15px;
+        }
+
+        .project ul {
+            padding-left: 20px;
+            color: #b9c1d9;
+        }
+
+        .technologies {
+            margin-top: 20px;
+        }
+
+        .technologies span {
+            display: inline-block;
+            background: #252d4b;
+            color: #00d9ff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin: 4px;
+            font-size: 12px;
+        }
+
+        /* CERTIFICATIONS */
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .certificate {
+            background: #151c34;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #2c3655;
+        }
+
+        .certificate h3 {
+            color: #00d9ff;
+        }
+
+        /* ACHIEVEMENTS */
+
+        .achievement {
+            max-width: 850px;
+            margin: auto;
+            background: #151c34;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid #2c3655;
+        }
+
+        .achievement strong {
+            display: block;
+            font-size: 50px;
+            color: #00d9ff;
+        }
+
+        .achievement p {
+            color: #b9c1d9;
+        }
+
+        /* CONTACT */
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: #151c34;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            border: 1px solid #2c3655;
+        }
+
+        .contact-card h3 {
+            color: #00d9ff;
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: #b9c1d9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #070b16;
+            color: #9da6bd;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                display: none;
+            }
+
+            #home {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 45px;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .certifications {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .skills-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .profile-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="logo">Triveni.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section id="home">
+
+        <div class="hero-text">
+
+            <h4>HELLO, I'M</h4>
+
+            <h1>
+                Thota <span>Triveni</span>
+            </h1>
+
+            <h2>
+                B.Tech CSE (AIML) Student
+            </h2>
+
+            <p>
+                Enthusiastic and motivated student with a strong foundation
+                in programming and problem-solving. Passionate about building
+                innovative solutions and continuously learning new technologies.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn-primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-box">
+
+            <div class="profile-circle">
+                TT
+            </div>
+
+            <h2>Thota Triveni</h2>
+
+            <p>
+                Artificial Intelligence &
+                Machine Learning
+            </p>
+
+            <br>
+
+            <p>
+                CGPA: <strong>7.6</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <p>ABOUT ME</p>
+
+            <h2>Profile</h2>
+
+        </div>
+
+        <div class="about">
+
+            <p>
+                Enthusiastic and motivated B.Tech CSE (AIML) student with
+                a strong foundation in programming and problem-solving.
+                Passionate about building innovative solutions and
+                continuously learning new technologies. Seeking opportunities
+                to apply skills in real-world projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <p>MY SKILLS</p>
+
+            <h2>Technical Skills</h2>
+
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <h3>Languages</h3>
+                <p>Java</p>
+                <p>Python</p>
+            </div>
+
+            <div class="skill">
+                <h3>Web Technologies</h3>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+                <p>REST APIs</p>
+            </div>
+
+            <div class="skill">
+                <h3>Databases</h3>
+                <p>MySQL</p>
+                <p>MongoDB</p>
+            </div>
+
+            <div class="skill">
+                <h3>Tools</h3>
+                <p>Git</p>
+                <p>GitHub</p>
+                <p>VS Code</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="section-title">
+
+            <p>MY JOURNEY</p>
+
+            <h2>Education</h2>
+
+        </div>
+
+        <div class="education">
+
+            <div class="education-card">
+
+                <span>2023 – 2027</span>
+
+                <h3>
+                    B.Tech in Artificial Intelligence & Machine Learning
+                </h3>
+
+                <p>
+                    Vasireddy Venkatadri Institute of Technology, Nambur
+                </p>
+
+                <strong>CGPA: 7.6</strong>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <span>2021 – 2023</span>
+
+                <h3>
+                    Intermediate (MPC)
+                </h3>
+
+                <p>
+                    Vignan Girls Junior College, Guntur
+                </p>
+
+                <strong>Score: 9.3</strong>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <span>2021</span>
+
+                <h3>
+                    SSC
+                </h3>
+
+                <p>
+                    ST. Ann's English Medium High School, Macherla
+                </p>
+
+                <strong>Score: 9.2</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <p>MY WORK</p>
+
+            <h2>Projects</h2>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project">
+
+                <h3>
+                    Smart School Diary
+                </h3>
+
+                <h4>
+                    Digital Academic Management Platform
+                </h4>
+
+                <p>
+                    A full-stack academic management application designed
+                    to improve communication between students, teachers,
+                    and parents.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Attendance tracking
+                    </li>
+
+                    <li>
+                        Assignment management
+                    </li>
+
+                    <li>
+                        Academic reporting
+                    </li>
+
+                    <li>
+                        Image/PDF homework submission
+                    </li>
+
+                    <li>
+                        Teacher feedback functionality
+                    </li>
+
+                    <li>
+                        Responsive user interface
+                    </li>
+
+                </ul>
+
+
+                <div class="technologies">
+
+                    <span>ReactJS</span>
+                    <span>JavaScript</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>MySQL</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project">
+
+                <h3>
+                    Web Scraping-Based Data Extraction System
+                </h3>
+
+                <h4>
+                    Python Data Extraction Application
+                </h4>
+
+                <p>
+                    A Python-based web scraping application developed
+                    to extract structured data from websites.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Extracted data using BeautifulSoup and Requests
+                    </li>
+
+                    <li>
+                        Automated collection from multiple web pages
+                    </li>
+
+                    <li>
+                        Reduced manual data collection effort
+                    </li>
+
+                    <li>
+                        Responsive interface
+                    </li>
+
+                    <li>
+                        Search and data management features
+                    </li>
+
+                </ul>
+
+
+                <div class="technologies">
+
+                    <span>Python</span>
+                    <span>BeautifulSoup</span>
+                    <span>Requests</span>
+                    <span>Pandas</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Bootstrap</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CERTIFICATIONS -->
+
+    <section id="certifications">
+
+        <div class="section-title">
+
+            <p>MY LEARNING</p>
+
+            <h2>Certifications</h2>
+
+        </div>
+
+
+        <div class="certifications">
+
+            <div class="certificate">
+
+                <h3>Generative AI</h3>
+
+                <p>L4G</p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <h3>Java Programming</h3>
+
+                <p>CodeChef</p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <h3>Python Programming</h3>
+
+                <p>codethantra</p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <h3>Human Computer Interaction</h3>
+
+                <p>NPTEL</p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <h3>Social Networks</h3>
+
+                <p>NPTEL</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENTS -->
+
+    <section id="achievements">
+
+        <div class="section-title">
+
+            <p>ACHIEVEMENTS</p>
+
+            <h2>My Achievements</h2>
+
+        </div>
+
+
+        <div class="achievement">
+
+            <strong>700+</strong>
+
+            <p>
+                CodeChef problem-solving questions solved using Java.
+            </p>
+
+            <br>
+
+            <p>
+                Participated in a National-Level Internal Hackathon
+                and collaborated on innovative technical project solutions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <p>GET IN TOUCH</p>
+
+            <h2>Contact Me</h2>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <div class="contact-card">
+
+                <h3>Email</h3>
+
+                <a href="mailto:thotatriveni950@gmail.com">
+                    thotatriveni950@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>Phone</h3>
+
+                <a href="tel:+916302895499">
+                    +91 6302895499
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>LinkedIn</h3>
+
+                <a href="https://www.linkedin.com/in/thota-triveni"
+                   target="_blank">
+                    thota-triveni
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>GitHub</h3>
+
+                <a href="https://github.com/Triveni-1519"
+                   target="_blank">
+                    Triveni-1519
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Thota Triveni | Portfolio
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
